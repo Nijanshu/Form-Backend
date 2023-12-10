@@ -3,7 +3,6 @@ require('dotenv').config();
 const connectToMongo = require('./db');
 
 const express = require('express');
-const URL = process.env.BASE_URL||5000;
 
 const bodyParser = require('body-parser');
 
@@ -37,7 +36,7 @@ app.get('/', (req, res) => {
   app.listen(PORT,async() => {
     try{
       await connectToMongo();
-    console.log(`iBlog listening at ${URL}`);
+    console.log(`Listening at PORT`);
   }catch(e){
     console.log("error: ", e.message);}
   });
